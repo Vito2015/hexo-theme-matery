@@ -1,4 +1,6 @@
 /*全局基础样式*/
+@import "basic.css";
+
 /*小屏幕下(手机类)的样式*/
 @media only screen and (max-width: 601px) {
     .container {
@@ -37,6 +39,7 @@ body {
     background-color: #eaeaea;
     margin: 0;
     color: #34495e;
+    /*color: var(--white);*/
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -241,7 +244,8 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    /*background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);*/
+    background-image: linear-gradient(to right, var(--light) 0%, var(--dark) 100%);
 }
 
 .text-color {
@@ -249,7 +253,7 @@ mark {
 }
 
 .white-color {
-    color: #fff;
+    color: var(--white);
 }
 
 .progress-bar {
@@ -257,7 +261,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background: linear-gradient(to right, var(--lightmore) 0%, var(--dark) 100%);
     opacity: 0.8;
 }
 
@@ -379,8 +383,8 @@ header .side-nav .social-link {
     height: 45px;
     line-height: 45px;
     font-size: 1rem;
-    color: #fff;
-    border: 1px solid #fff;
+    color: var(--white);
+    border: 1px solid var(--white);
     background-color: transparent;
     border-radius: 30px;
     box-shadow: none;
@@ -510,7 +514,7 @@ header .side-nav .social-link {
 .cover-social-link a {
     padding: 0 15px;
     font-size: 1.35rem;
-    color: #fff;
+    color: var(--white);
 }
 
 header .go-back {
@@ -569,7 +573,7 @@ header .go-back i {
 
 .bg-cover .container {
     position: relative;
-    color: #fff;
+    color: var(--white);
     z-index: 2;
 }
 
@@ -707,9 +711,13 @@ header .go-back i {
     font-weight: 700;
 }
 
+.dream .title {
+    color: var(--lightdark)
+}
 .dream .text {
     opacity: .6;
     font-size: 1.1rem;
+    color: var(--lightdark)
 }
 
 .music-player,
@@ -789,7 +797,7 @@ header .go-back i {
     border: 0;
     border-radius: 10px;
     color: rgba(0, 0, 0, .87);
-    background: #fff 50%;
+    background: var(--white) 50%;
     background-size: cover;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
@@ -813,7 +821,7 @@ header .go-back i {
 }
 
 .recommend .post-card a {
-    color: #fff;
+    color: var(--white);
 }
 
 .recommend .post-card .post-title {
@@ -837,7 +845,7 @@ header .go-back i {
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 40px;
-    color: #fff;
+    color: var(--white);
     border-radius: 30px;
     box-shadow: 0 2px 2px 0 rgba(244, 67, 54, .14), 0 3px 1px -2px rgba(244, 67, 54, .2), 0 1px 5px 0 rgba(244, 67, 54, .12);
 }
@@ -942,7 +950,7 @@ article .article-tags .chip {
     font-weight: 400;
     height: 22px;
     line-height: 22px;
-    color: #fff;
+    color: var(--white);
     border-radius: 10px;
 }
 
@@ -960,7 +968,7 @@ article .article-tags .chip {
     position: absolute;
     box-sizing: border-box;
     z-index: 200;
-    background-color: #fff;
+    background-color: var(--white);
     font-weight: 500;
 }
 
@@ -1044,7 +1052,7 @@ article .article-tags .chip {
     font-weight: 400;
     height: 25px;
     line-height: 24px;
-    color: #fff;
+    color: var(--white);
     border-radius: 15px;
     margin-right: 5px;
     margin-bottom: 2px;
@@ -1059,13 +1067,13 @@ article .article-tags .chip {
     margin-right: 5px;
     margin-bottom: 2px;
     color: #42b983;
-    background: #fff;
+    background: var(--white);
     border: 1px solid;
     transition: all 0.6s ease-in-out;
 }
 
 #artDetail .tag_share .article-tag .chip:hover {
-    color: #fff;
+    color: var(--white);
     background: #42b983;
 }
 
@@ -1297,8 +1305,9 @@ thead {
 }
 
 .chip-container .chip-active {
-    color: #FFF !important;
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%) !important;
+    color: var(--white) !important;
+    /*background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%) !important;*/
+    background: linear-gradient(to bottom right, var(--lightdark) 0%, var(--dark) 100%) !important;
     box-shadow: 2px 5px 10px #aaa !important;
 }
 
@@ -1316,8 +1325,9 @@ thead {
 }
 
 .chip-container .chip:hover {
-    color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+    color: var(--white);
+    /*background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;*/
+    background: linear-gradient(to right, var(--lightdark) 0%, var(--dark) 100%) !important;
 }
 
 .chip .tag-length {
@@ -1327,12 +1337,12 @@ thead {
 }
 
 .chip-default .tag-length {
-    color: #e91e63;
+    color: var(--warmthmore);
     margin-top: 1px;
 }
 
 .chip-active .tag-length {
-    color: #fff;
+    color: var(--white);
 }
 
 /* archive page. */
@@ -1343,13 +1353,13 @@ thead {
     margin: 10px 0 50px -20px;
     padding: 21px 10px;
     background-color: #ff5722;
-    color: #fff;
+    color: var(--white);
     font-size: 1.8rem;
     font-weight: 600;
 }
 
 #cd-timeline .year a {
-    color: #fff;
+    color: var(--white);
 }
 
 #cd-timeline .month {
@@ -1359,20 +1369,20 @@ thead {
     margin: 10px 0 30px -10px;
     padding: 14px 16px;
     background-color: #ef6c00;
-    color: #fff;
+    color: var(--white);
     font-size: 1.7rem;
     font-weight: 600;
 }
 
 #cd-timeline .month a {
-    color: #fff;
+    color: var(--white);
 }
 
 #cd-timeline .day {
     position: relative;
     padding: 8px 10px;
     background-color: #ffa726;
-    color: #fff;
+    color: var(--white);
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -1393,7 +1403,8 @@ thead {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: #0f9d58;
+    /*background: #0f9d58;*/
+    background: var(--warmth);
 }
 
 @media only screen and (min-width: 900px) {
@@ -1458,7 +1469,7 @@ thead {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 4px var(--white)fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 @media only screen and (min-width: 900px) {
@@ -1490,7 +1501,7 @@ thead {
     margin-left: 60px;
     padding: 0;
     border-radius: 5px;
-    background: #ffffff;
+    background: var(--white);
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
 
@@ -1608,7 +1619,7 @@ thead {
 }
 
 .post-statis .statis .count a {
-    color: #42b983;
+    color: var(--lightdark);
 }
 
 .post-statis .statis .name {
@@ -1628,9 +1639,9 @@ thead {
     line-height: 2.2rem;
     margin: 0 0.5rem;
     padding: 0;
-    color: #fff;
-    border: 1px solid #0f9d58;
-    background: radial-gradient(#4cbf30, #0f9d58);
+    color: var(--white);
+    border: 1px solid var(--dark);
+    background: radial-gradient(var(--lightdark), var(--dark));
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
@@ -1703,7 +1714,7 @@ thead {
     height: 76px;
     text-align: center;
     line-height: 76px;
-    color: #fff;
+    color: var(--white);
     font-size: 1.75rem;
     border-radius: 50%;
 }
@@ -1751,7 +1762,7 @@ thead {
     left: 0;
     width: 110px;
     font-size: 0.9rem;
-    color: #ffffff;
+    color: var(--white)fff;
     border-radius: 35px;
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
@@ -1783,7 +1794,7 @@ thead {
     font-size: 12px;
     height: 30px;
     line-height: 30px;
-    color: #ffffff;
+    color: var(--white)fff;
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -1800,12 +1811,12 @@ thead {
 }
 
 .other-skills .chip {
-    background-color: #fff;
+    background-color: var(--white);
     border: 1px solid #eee;
 }
 
 .other-skills .chip:hover {
-    color: #fff;
+    color: var(--white);
     background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
     border: 1px solid #4cbf30;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
@@ -1839,7 +1850,7 @@ footer .social-statis {
 }
 
 footer a {
-    color: #fff;
+    color: var(--white);
 }
 
 footer .copy-right {
@@ -1974,7 +1985,7 @@ p.search-result-summary{
 }
 
 .lg-sub-html .center-caption {
-    color: #fff !important;
+    color: var(--white) !important;
     border-bottom: none;
 }
 
@@ -2127,7 +2138,7 @@ p.search-result-summary{
 
 .m-nav-show,
 .m-nav-item > a:hover {
-    color: #FFF;
+    color: var(--white);
     background: rgba(255, 255, 255, .8);
 }
 
