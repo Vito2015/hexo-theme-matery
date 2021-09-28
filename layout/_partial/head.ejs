@@ -24,11 +24,12 @@
         title = __('tag') + ': ' + page.tag;
     }
 
+    var confTotalTitle = config.title + '(' + config.subtitle + ")";
     // final page title.
-    var pageTitle = title ? title + ' | ' + config.title : config.title;
+    var pageTitle = title ? title + ' | ' + confTotalTitle : confTotalTitle;
 
     // keywords.
-    var keyWords = config.keywords ? config.keywords : config.title;
+    var keyWords = config.keywords ? config.keywords : confTotalTitle;
     if (page.keywords) {
         keyWords = page.keywords;
     } else {
