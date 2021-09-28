@@ -24,9 +24,9 @@
         title = __('tag') + ': ' + page.tag;
     }
 
-    var confTotalTitle = config.title + '(' + config.subtitle + ")";
+    var confTotalTitle = config.title + ' - ' + config.subtitle;
     // final page title.
-    var pageTitle = title ? title + ' | ' + confTotalTitle : confTotalTitle;
+    var pageTitle = title ? title + ' - ' + confTotalTitle : confTotalTitle;
 
     // keywords.
     var keyWords = config.keywords ? config.keywords : confTotalTitle;

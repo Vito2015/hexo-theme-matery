@@ -359,7 +359,7 @@ changyan:
 githubLink:
   enable: true
   url: https://github.com/Vito2015
-  title: Fork Theme
+  title: Fork Me
 
 # The configuration of the Twikoo comment module is not activated by default.
 # To use it, activate the configuration item and set envId.
