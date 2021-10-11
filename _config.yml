@@ -398,8 +398,8 @@ googleAnalytics:
 # Add baidu analytics configuration
 # 添加 baidu Analytics 配置
 baiduAnalytics:
-  enable: false
-  id:
+  enable: true
+  id: 27282b5925c0326f82bd01c73904db90
 
 # 百度搜索资源平台提交链接
 baiduPush: true
@@ -576,8 +576,8 @@ banner:
 #ICP备案信息尾部显示
 icp:
   enable: true
-  url: # 备案链接
-  text: # 备案信息
+  url: https://beian.miit.gov.cn # 备案链接
+  text: 京ICP备2021031226号-1 # 备案信息
 
 # CDN访问加速 
 # 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
