@@ -1850,11 +1850,39 @@ footer .social-statis {
 }
 
 footer a {
-    color: var(--white);
+    color: var(--whitedark);
 }
 
 footer .copy-right {
-    color: #dbdbdb;
+    color: var(--whitedark);
+}
+
+
+footer .foot-title-container {
+    color: var(--white);
+    cursor:default;
+    vertical-align:middle;
+}
+
+footer .foot-title-container #foot-title {
+    font-size: 1.2rem;
+}
+
+footer .foot-title-container #foot-subtitle {
+    font-size: 1.2rem;
+}
+
+footer .divider {
+    background-color: var(--whitedark);
+}
+
+footer .foot-title-container img {
+    height: 40px;
+    vertical-align: middle;
+    padding-bottom: 6px;
+}
+footer .foot-title-container #foot-description {
+    font-size: 0.8rem;
 }
 
 /*搜索层样式*/

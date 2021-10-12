@@ -2,10 +2,19 @@
     <% if (theme.music.enable && theme.music.fixed) { %>
         <%- partial('_widget/music') %>
     <% } %>
-
+        <!--style="margin-bottom: <% if (theme.time.enable) { %>15<% } else { %>0<% } %>px !important;">-->
     <div class="container row center-align"
-         style="margin-bottom: <% if (theme.time.enable) { %>15<% } else { %>0<% } %>px !important;">
-        <div class="col s12 m8 l8 copy-right">
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 left-align foot-title-container">
+            <% if (theme.logo !== undefined && theme.logo.length > 0) { %>
+                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" alt="LOGO">
+            <% } %>
+                <span id="foot-title"><%= config.title %></span>
+                &nbsp|&nbsp<span id="foot-subtitle"><%= config.subtitle %></span>
+                &nbsp|&nbsp<span id="foot-description"><%= config.description %></span>
+        </div>
+        <div class="col s12 divider"></div>
+        <div class="col s12 m8 l8 copy-right left-align">
             Copyright&nbsp;&copy;
             <% if (theme.time.year !== new Date().getFullYear()) { %>
                 <span id="year"><%- theme.time.year %>-<%- new Date().getFullYear() %></span>
@@ -16,16 +25,18 @@
             <a href="<%- url_for('/about') %>" target="_blank"><%- config.author %></a>
 <!--            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>-->
 <!--            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>-->
-            | <% if (theme.icp.enable) { %>
+            <br>
+            <% if (theme.icp.enable) { %>
+                <a href="<%- url_for(theme.icp.url) %>" target="_blank"><%= theme.icp.text %></a>
+                |
                 <span id="icp"><img src="<%- theme.jsDelivr.url %><%- url_for('/medias/icp.png') %>"
                                     style="vertical-align: text-bottom;"/>
-                <a href="<%- url_for(theme.icp.url) %>" target="_blank"><%= theme.icp.text %></a>
+                <a href="<%- url_for(theme.icp.gbUrl) %>" target="_blank"><%= theme.icp.gbText %></a>
             </span>
             <% } %>
             <br>
             <% if (theme.postInfo.totalCount) { %>
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;<%- __('siteTotalWords') %>:&nbsp;<span
-                        class="white-color"><%= totalcount(site) %></span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;<%- __('siteTotalWords') %>:&nbsp;<span><%= totalcount(site) %></span>
             <% } %>
             <% let socialClass = '' %>
             <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
@@ -34,13 +45,13 @@
             <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>
                 <span id="busuanzi_container_site_pv">
                 &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;<%- __('siteTotalVisits') %>:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    <span id="busuanzi_value_site_pv" ></span>
             </span>
             <% } %>
             <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalNumberOfvisitors) { %>
                 <span id="busuanzi_container_site_uv">
                 &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;<%- __('siteTotalVisitors') %>:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    <span id="busuanzi_value_site_uv"></span>
             </span>
             <% } %>
             <br>
@@ -103,7 +114,7 @@
             <% } %>
 <!--            <br>-->
         </div>
-        <div class="col s12 m4 l4 social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+        <div class="col s12 m4 l4 right-align social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
     </div>
 </footer>
 

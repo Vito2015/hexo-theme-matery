@@ -578,6 +578,8 @@ icp:
   enable: true
   url: https://beian.miit.gov.cn # 备案链接
   text: 京ICP备2021031226号-1 # 备案信息
+  gbUrl: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802037451
+  gbText: 京公网安备11010802037451号
 
 # CDN访问加速 
 # 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
