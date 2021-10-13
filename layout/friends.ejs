@@ -195,6 +195,7 @@
                 <div class="tag-title center-align">
                     <i class="fas fa-address-book"></i>&nbsp;&nbsp;<%= __('friends') %>
                 </div>
+                <h4><%= __('friends') %></h4>
                 <article id="friends-link">
                     <% if (site.data && site.data.friends) { %>
                     <% var friends = site.data.friends; %>
@@ -225,15 +226,13 @@
                     <% } %>
                 </article>
             </div>
-        </div>
-
-        <% if (page.content && page.content.length > 0) { %>
-            <div class="card">
+            <% if (page.content && page.content.length > 0) { %>
                 <div class="card-content">
                     <%- page.content %>
                 </div>
-            </div>
-        <% } %>
+            <% } %>
+        </div>
+
 
         <div class="card">
 

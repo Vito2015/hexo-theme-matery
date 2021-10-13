@@ -1,0 +1,9 @@
+<!--微信分享显示缩略图-->
+
+<% var picPath = theme.favicon || theme.logo; %>
+
+<% if(picPath !== undefined && picPath.length > 0) { %>
+    <div style='margin:0 auto;display:none;'>
+        <img src="<%- theme.jsDelivr.url %><%- url_for(picPath) %>" alt="share"/>
+    </div>
+<% } %>
