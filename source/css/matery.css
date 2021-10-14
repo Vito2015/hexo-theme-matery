@@ -903,13 +903,15 @@ article .card-image {
 }
 
 article .card-image img {
-    height: 220px;
+    /*height: 220px;*/
+    height: 90px;
     border-radius: 0.3rem;
     opacity: .7;
 }
 
 article .tag-image img {
-    height: 220px;
+    /*height: 220px;*/
+    height: 90px;
 }
 
 article .card .card-content {
@@ -1388,8 +1390,8 @@ thead {
 }
 
 #cd-timeline {
-    /*width: 90%;*/
-    max-width: 820px;
+    width: 90%;
+    /*max-width: 820px;*/
     position: relative;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -1514,6 +1516,36 @@ thead {
 .cd-timeline-content .card {
     margin: 0;
 }
+
+
+.card .card-image .card-title {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: unset;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/*@media screen and (min-width: 368px) and (max-width: 767px) {*/
+/*    .cd-timeline-content .card .card-title {*/
+/*        text-align: center;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 768px) {*/
+/*    .cd-timeline-content .card .card-title {*/
+/*        text-align: center;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (max-width: 367px) {*/
+/*    */
+/*}*/
 
 .cd-timeline-content::before {
     content: '';
@@ -1963,6 +1995,10 @@ p.search-result-summary{
         float: left;
         width: 50%;
     }
+
+    .social-auto-align {
+        text-align: right;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -1971,6 +2007,10 @@ p.search-result-summary{
         float: left;
         margin-right: 15px;
     }
+
+    .social-auto-align {
+        text-align: right;
+    }
 }
 
 @media screen and (max-width: 367px) {
@@ -1978,6 +2018,10 @@ p.search-result-summary{
         word-break: keep-all;
         float: left;
         width: 100%;
+    }
+
+    .social-auto-align {
+        text-align: left;
     }
 
     .custom-card {
