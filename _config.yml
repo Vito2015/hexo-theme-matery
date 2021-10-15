@@ -133,6 +133,8 @@ indexbtn:
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
+  coverEnable: false
+  footerEnable: true
   github: https://github.com/Vito2015
   email: vito2015@live.com
   facebook: # https://www.facebook.com/xxx
@@ -325,7 +327,7 @@ livere:
 
 # The configuration of the Valine comment module is not activated by default.
 # To use it, activate the configuration item and set appId and appKey.
-# Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
+# Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，https://console.leancloud.cn/apps 并设置 appId 和 appKey.
 valine:
   enable: true
   appId: LYaBrQqHVCrUJpbnuoQBRoJr-gzGzoHsz

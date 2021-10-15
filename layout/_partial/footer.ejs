@@ -114,7 +114,9 @@
             <% } %>
 <!--            <br>-->
         </div>
-        <div class="col s12 m4 l4 social-auto-align social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+        <% if (theme.socialLink.footerEnable) { %>
+            <div class="col s12 m4 l4 social-auto-align social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+        <% } %>
     </div>
 </footer>
 

@@ -23,8 +23,9 @@
     }
 
     .toc-widget {
-        width: 345px;
-        padding-left: 20px;
+        position: fixed;
+        max-width: 345px;
+        /*padding-left: 20px;*/
     }
 
     .toc-widget .toc-title {
@@ -91,11 +92,11 @@
     }
 </style>
 <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
+    <div id="main-content" class="col s12 m12 l10 offset-l1">
         <%- partial('_partial/post-detail.ejs') %>
     </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
+    <div id="toc-aside" class="expanded col l1 hide-on-med-and-down">
+        <div class="toc-widget">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;<%- __('toc') %></div>
             <div id="toc-content"></div>
         </div>
@@ -176,10 +177,10 @@
         $('#floating-toc-btn .btn-floating').click(function () {
             if ($tocAside.hasClass(expandedClass)) {
                 $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
+                $mainContent.removeClass('l10');
             } else {
                 $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
+                $mainContent.addClass('l10');
             }
             fixPostCardWidth('artDetail', 'prenext-posts');
         });

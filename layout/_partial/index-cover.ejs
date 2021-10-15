@@ -82,7 +82,9 @@ var coverPostsCount = coverPosts.length;
                     </a>
                 <% } %>
             </div>
-            <div class="cover-social-link"><%- partial('_partial/social-link') %></div>
+            <% if (theme.socialLink.coverEnable) { %>
+                <div class="cover-social-link"><%- partial('_partial/social-link') %></div>
+            <% } %>
         </div>
     </div>
 

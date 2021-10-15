@@ -6,12 +6,20 @@
     .container {
         width: 95%;
     }
+
+    .social-auto-align {
+        text-align: left;
+    }
 }
 
 /*中等屏幕下(平板类)的样式*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
+    }
+
+    .social-auto-align {
+        text-align: left;
     }
 }
 
@@ -31,7 +39,11 @@
     .post-container {
         width: 90%;
         margin: 0 auto;
-        max-width: 1250px;
+        max-width: 1400px;
+    }
+
+    .social-auto-align {
+        text-align: right;
     }
 }
 
@@ -1995,10 +2007,6 @@ p.search-result-summary{
         float: left;
         width: 50%;
     }
-
-    .social-auto-align {
-        text-align: right;
-    }
 }
 
 @media screen and (min-width: 768px) {
@@ -2007,10 +2015,6 @@ p.search-result-summary{
         float: left;
         margin-right: 15px;
     }
-
-    .social-auto-align {
-        text-align: right;
-    }
 }
 
 @media screen and (max-width: 367px) {
@@ -2018,10 +2022,6 @@ p.search-result-summary{
         word-break: keep-all;
         float: left;
         width: 100%;
-    }
-
-    .social-auto-align {
-        text-align: left;
     }
 
     .custom-card {
