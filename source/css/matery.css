@@ -347,6 +347,9 @@ header .side-nav .mobile-head .logo-desc {
     font-size: 0.8rem;
     line-height: 1.3rem;
     color: #e3e3e3;
+    white-space:normal;
+    word-break:break-all;
+    word-wrap:break-word;
 }
 
 header .side-nav .menu-list li {
