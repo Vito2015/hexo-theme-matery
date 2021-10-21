@@ -72,4 +72,10 @@ checkPolicy: 查看
 siteTotalWords: 站點總字數
 siteTotalVisits: 總訪問量
 siteTotalVisitors: 總訪問人數
-title: 幺蛾日記
+site_title: 幺蛾日記
+site_subtitle: 魯君樹人的博客
+site_author: 魯君樹人
+site_description: 記錄分享編程技術心得，定格工作及生活美好瞬間。
+site_keywords: 幺蛾日記,魯君樹人,樹洞博客,詩歌,IT,技術,編程,大數據,服務端研發,Bug,Java,Node,Js,Python,Scala,Golang
+
+valine_submit: 提交

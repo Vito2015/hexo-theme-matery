@@ -6,16 +6,10 @@ configRoot = (configRoot === null || configRoot === undefined || configRoot === 
 
     <div class="mobile-head bg-color">
         <% if (theme.logo !== undefined && theme.logo.length > 0) { %>
-        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img circle responsive-img">
+            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="<%= __('site_title') %>" />
         <% } %>
-        <div class="logo-name"><%= config.title %></div>
-        <div class="logo-desc">
-            <% if (config.description && config.description.length > 0) { %>
-            <%= config.description %>
-            <% } else { %>
-            Never really desperate, only the lost of the soul.
-            <% } %>
-        </div>
+            <div class="logo-name"><%= __('site_title') %></div>
+            <div class="logo-desc"><%= __('site_description') %></div>
     </div>
 
     <%

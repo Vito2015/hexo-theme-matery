@@ -9,6 +9,7 @@
 
     .social-auto-align {
         text-align: left;
+        padding-left: 0 !important;
     }
 }
 
@@ -20,6 +21,8 @@
 
     .social-auto-align {
         text-align: left;
+        padding-left: 0 !important;
+        width: unset !important;
     }
 }
 
@@ -307,6 +310,7 @@ header nav .brand-span {
 
 header .brand-logo .logo-img {
     height: 40px;
+    width: 34px;
     vertical-align: middle;
     padding-bottom: 6px;
 }
@@ -330,19 +334,22 @@ header .side-nav .mobile-head {
 
 header .side-nav .mobile-head img {
     margin-top: 30px;
-    width: 75px;
-    height: 75px;
+    height: 40px;
+    width: 34px;
+    padding-bottom: 6px;
+    margin-bottom: -10px;
 }
 
 header .side-nav .mobile-head .logo-name {
     margin-top: -30px;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
     font-size: 1.5rem;
+    display: inline;
 }
 
 header .side-nav .mobile-head .logo-desc {
     margin-top: -10px;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
     padding-bottom: 10px;
     font-size: 0.8rem;
     line-height: 1.3rem;
@@ -1912,7 +1919,7 @@ footer .foot-title-container {
 }
 
 footer .foot-title-container #foot-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 footer .foot-title-container #foot-subtitle {
@@ -1925,11 +1932,17 @@ footer .divider {
 
 footer .foot-title-container img {
     height: 40px;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     padding-bottom: 6px;
+    width: 34px;
+    margin-bottom: -10px;
 }
 footer .foot-title-container #foot-description {
     font-size: 0.8rem;
+    white-space:normal;
+    word-break:break-all;
+    word-wrap:break-word;
+    display: inline-block;
 }
 
 /*搜索层样式*/

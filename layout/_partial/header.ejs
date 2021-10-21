@@ -4,9 +4,9 @@
             <div class="brand-logo">
                 <a href="<%- url_for() %>" class="waves-effect waves-light">
                     <% if (theme.logo !== undefined && theme.logo.length > 0) { %>
-                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="LOGO">
+                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="<%= __('site_title') %>">
                     <% } %>
-                    <span class="logo-span"><%= __('title') %></span>
+                    <span class="logo-span"><%= __('site_title') %></span>
                 </a>
             </div>
             <%- partial('_partial/navigation') %>

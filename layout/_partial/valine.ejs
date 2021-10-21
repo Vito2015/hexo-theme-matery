@@ -38,6 +38,10 @@
         text-decoration: none;
     }
 
+    #vcomments .vrow .vcol-30 a {
+        pointer-events: none !important;
+    }
+
     #vcomments img {
         max-width: 100%;
         height: auto;
@@ -306,13 +310,23 @@
         recordIP: '<%- theme.valine.recordIP %>' === 'true',
         path: window.location.pathname,
     });
+
+    console.log($('#vcomments .vcol-30 a'))
+    $('#vcomments .vcol-30 a').attr('ref', 'external nofollow noopener noreferrer');
+    //<i class="fa fa-check" </i>
+    $('#vcomments .vsubmit').html('<i class="fa fa-check"></i>&nbsp;<span><%- __('valine_submit') %></span>')
+
+    $("#vcomments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
 </script>
 
 <!--酷Q推送-->
 <% if (theme.valine.coolpushkey && theme.valine.coolpushkey > 1) { %>
 <script>
     var pushLink ="https://push.xuthus.cc/send/<%- theme.valine.coolpushkey %>";
-    var siteName = "<%- config.title %>'s Blog";
+    var siteName = "<%- __('site_title') %>";
     var valineButton=document.getElementsByClassName("vsubmit vbtn")[0];
     var title = siteName + "上又有新评论啦~!\n";
   

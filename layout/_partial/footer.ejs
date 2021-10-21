@@ -5,55 +5,53 @@
         <!--style="margin-bottom: <% if (theme.time.enable) { %>15<% } else { %>0<% } %>px !important;">-->
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
-        <div class="col s12 m8 l8 left-align foot-title-container">
+        <div class="col s12 m12 l12 left-align foot-title-container">
             <% if (theme.logo !== undefined && theme.logo.length > 0) { %>
-                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" alt="LOGO">
+                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" alt="<%= __('site_title') %>">
             <% } %>
-                <span id="foot-title"><%= config.title %></span>
-                &nbsp|&nbsp<span id="foot-subtitle"><%= config.subtitle %></span>
-                &nbsp&nbsp<span id="foot-description"><%= config.description %></span>
+            <span id="foot-title"><%= __('site_title') %></span>
+            &nbsp;|&nbsp;<span id="foot-subtitle"><%= __('site_subtitle') %></span>
+            <span id="foot-description"><%= __('site_description') %></span>
         </div>
         <div class="col s12 divider"></div>
-        <div class="col s12 m8 l8 copy-right left-align">
-            Copyright&nbsp;&copy;
-            <% if (theme.time.year !== new Date().getFullYear()) { %>
-                <span id="year"><%- theme.time.year %>-<%- new Date().getFullYear() %></span>
-            <% } else { %>
-                <span id="year"><%- theme.time.year %></span>
-            <% } %>
-            <span id="year"><%- theme.time.year %></span>
-            <a href="<%- url_for('/about') %>" target="_blank"><%- config.author %></a>
-<!--            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>-->
-<!--            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>-->
+        <div class="col s12 m12 l8 copy-right left-align">
+            <div class="col s12 m12 l12 left-align" style="padding-left: 0; display: inline-block;">
+                &copy; <span id="year"><%- new Date().getFullYear() %></span>
+                <a href="<%- url_for('/about') %>" target="_blank"><%- __('site_title') %> - <%- __('site_author') %></a>
+            </div>
             <br>
             <% if (theme.icp.enable) { %>
-                <a href="<%- url_for(theme.icp.url) %>" target="_blank"><%= theme.icp.text %></a>
-                |
-                <span id="icp"><img src="<%- theme.jsDelivr.url %><%- url_for('/medias/icp.png') %>"
+            <div class="col s12 m12 l12 left-align" style="padding-left: 0; display: inline-block;">
+                <a href="<%- url_for(theme.icp.url) %>" target="_blank" style="display: inline-block"><%= theme.icp.text %></a>
+                &nbsp;&nbsp;
+                <span id="icp" style="display: inline-block"><img src="<%- theme.jsDelivr.url %><%- url_for('/medias/icp.png') %>"
                                     style="vertical-align: text-bottom;"/>
-                <a href="<%- url_for(theme.icp.gbUrl) %>" target="_blank"><%= theme.icp.gbText %></a>
-            </span>
+                    <a href="<%- url_for(theme.icp.gbUrl) %>" target="_blank"><%= theme.icp.gbText %></a>
+                </span>
+            </div>
             <% } %>
             <br>
+            <div class="col s12 m12 l12 left-align" style="padding-left: 0; display: inline-block;">
             <% if (theme.postInfo.totalCount) { %>
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;<%- __('siteTotalWords') %>:&nbsp;<span><%= totalcount(site) %></span>
+                <!--<i class="fas fa-chart-area"></i>&nbsp;-->
+                <span><%- __('siteTotalWords') %>:&nbsp;<span><%= totalcount(site) %></span>&nbsp;&nbsp;</span>
             <% } %>
-            <% let socialClass = '' %>
-            <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
-                <% socialClass = 'social-statis' %>
-            <% } %>
+
             <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;<%- __('siteTotalVisits') %>:&nbsp;
-                    <span id="busuanzi_value_site_pv" ></span>
+                    <!--<i class="far fa-eye"></i>&nbsp;-->
+                    <%- __('siteTotalVisits') %>:&nbsp;
+                    <span id="busuanzi_value_site_pv" ></span>&nbsp;&nbsp;
             </span>
             <% } %>
             <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalNumberOfvisitors) { %>
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;<%- __('siteTotalVisitors') %>:&nbsp;
-                    <span id="busuanzi_value_site_uv"></span>
+                    <!--<i class="far users"></i>&nbsp;-->
+                    <%- __('siteTotalVisitors') %>:&nbsp;
+                    <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;
             </span>
             <% } %>
+            </div>
             <br>
 
             <!-- 运行天数提醒. -->
@@ -115,7 +113,11 @@
 <!--            <br>-->
         </div>
         <% if (theme.socialLink.footerEnable) { %>
-            <div class="col s12 m4 l4 social-auto-align social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+            <% let socialClass = '' %>
+            <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+                <% socialClass = 'social-statis' %>
+            <% } %>
+            <div class="col s12 m12 l4 social-auto-align social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
         <% } %>
     </div>
 </footer>

@@ -2,8 +2,8 @@
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
-                <% if (config.subtitle && config.subtitle.length > 0) { %>
-                <%= config.subtitle %>
+                <% if (__('site_subtitle') && __('site_subtitle').length > 0) { %>
+                <%= __('site_subtitle') %>
                 <% } else { %>
                     subtitle
                 <% } %>
@@ -28,7 +28,7 @@
                     });
                 </script>
                 <% } else { %>
-                    <%= config.description %>
+                    <%= __('site_description') %>
                 <% } %>
             </div>
         </div>

@@ -72,4 +72,10 @@ checkPolicy: more
 siteTotalWords: Total Words
 siteTotalVisits: Total visits
 siteTotalVisitors: Total visitors
-title: iBug Blog
+site_title: iBug Blog
+site_subtitle: Vito's blog
+site_author: Vito
+site_description: Record and share programming and freezes the moments of work and life.
+site_keywords: iBug Blog,Vito,Treehole Blog,Poetry,IT,Teach,Programming,Bigdata,Backend Development,Bug,Java,Node,Js,Python,Scala,Golang
+
+valine_submit: Submit

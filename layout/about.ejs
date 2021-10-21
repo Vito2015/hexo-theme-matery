@@ -19,14 +19,14 @@
                     <div class="col s12 m12 l4">
                         <div class="profile center-align">
                             <div class="avatar">
-                                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.avatar) %>" alt="<%- config.author %>"
+                                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.avatar) %>" alt="<%- __('site_author') %>"
                                      class="circle responsive-img avatar-img">
                             </div>
                             <div class="author">
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     <%- partial('_partial/post-statis') %>
                                 </div>
-                                <div class="title"><%- config.author %></div>
+                                <div class="title"><%- __('site_author') %></div>
                                 <div class="career"><%- theme.profile.career %></div>
                                 <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
                                     <%- partial('_partial/social-link') %>
