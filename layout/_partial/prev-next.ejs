@@ -42,8 +42,10 @@ var featureImages = theme.featureImages;
                     <div class="summary block-with-text">
                         <% if (page.prev.summary && page.prev.summary.length > 0) { %>
                             <%- page.prev.summary %>
-                        <% } else { %>
+                        <% } else if (page.prev.excerpt && page.prev.excerpt.length > 0) { %>
                             <%- strip_html(page.prev.excerpt).substring(0, 120) %>
+                        <% } else if (page.prev.content && page.prev.content.length > 0) { %>
+                            <%- strip_html(page.prev.content).substring(0, 120) %>
                         <% } %>
                     </div>
                     <div class="publish-info">
@@ -102,8 +104,10 @@ var featureImages = theme.featureImages;
                     <div class="summary block-with-text">
                         <% if (page.summary && page.summary.length > 0) { %>
                             <%- page.summary %>
-                        <% } else { %>
+                        <% } else if (page.excerpt && page.excerpt.length > 0) { %>
                             <%- strip_html(page.excerpt).substring(0, 120) %>
+                        <% } else if (page.content && page.content.length > 0) { %>
+                            <%- strip_html(page.content).substring(0, 120) %>
                         <% } %>
                     </div>
                     <div class="publish-info">
@@ -164,8 +168,10 @@ var featureImages = theme.featureImages;
                     <div class="summary block-with-text">
                         <% if (page.next.summary && page.next.summary.length > 0) { %>
                             <%- page.next.summary %>
-                        <% } else { %>
+                        <% } else if (page.next.excerpt && page.next.excerpt.length > 0) { %>
                             <%- strip_html(page.next.excerpt).substring(0, 120) %>
+                        <% } else if (page.next.content && page.next.content.length > 0) { %>
+                            <%- strip_html(page.next.content).substring(0, 120) %>
                         <% } %>
                     </div>
                     <div class="publish-info">
@@ -224,8 +230,10 @@ var featureImages = theme.featureImages;
                     <div class="summary block-with-text">
                         <% if (page.summary && page.summary.length > 0) { %>
                             <%- page.summary %>
-                        <% } else { %>
+                        <% } else if (page.excerpt && page.excerpt.length > 0) { %>
                             <%- strip_html(page.excerpt).substring(0, 120) %>
+                        <% } else if (page.content && page.content.length > 0) { %>
+                            <%- strip_html(page.content).substring(0, 120) %>
                         <% } %>
                     </div>
                     <div class="publish-info">

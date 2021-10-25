@@ -2083,19 +2083,28 @@ p.search-result-summary{
 
 /* styles for '...' */
 .block-with-text {
-    /* hide text if it more than N lines  */
-    overflow: hidden;
-    /* for set '...' in absolute position */
-    position: relative;
-    /* use this value to count block height */
+    /*!* hide text if it more than N lines  *!*/
+    /*overflow: hidden;*/
+    /*!* for set '...' in absolute position *!*/
+    /*position: relative;*/
+    /*!* use this value to count block height *!*/
+    /*line-height: 1.5em;*/
+    /*!* max-height = line-height (1.2) * lines max number (3) *!*/
+    /*max-height: 4.5em;*/
+    /*min-height: 4.5em;*/
+    /*!* fix problem when last visible word doesn't adjoin right side  *!*/
+    /*text-align: justify;*/
+    /*!* place for '...' *!*/
+    /*margin-right: -1em;*/
+    /*padding-right: 1em;*/
+
     line-height: 1.5em;
-    /* max-height = line-height (1.2) * lines max number (3) */
     max-height: 4.5em;
-    /* fix problem when last visible word doesn't adjoin right side  */
-    text-align: justify;
-    /* place for '...' */
-    margin-right: -1em;
-    padding-right: 1em;
+    min-height: 4.5em;
+    overflow: hidden;
+    display: -webkit-box;/*将对象作为弹性伸缩盒子模型显示*/
+    -webkit-line-clamp: 3; /*限制文本的行数，只显示3行*/
+    -webkit-box-orient: vertical;/*设置或检索伸缩盒对象的子元素的排列方式 */
 }
 
 /* create the ... style */
