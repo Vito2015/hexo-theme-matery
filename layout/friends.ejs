@@ -251,7 +251,7 @@
                                         <% }%>
                                     </div>
                                     <div class="title">
-                                        <img src="<%- url_for(friend.avatar) %>" alt="img">
+                                        <img src="<%- url_for(friend.avatar) %>" alt="<%= friend.name %>">
                                         <div>
                                             <h1 class="friend-name"><%= friend.name %></h1>
                                             <p style="position: relative;top: -35px;"><%= friend.introduction %></p>

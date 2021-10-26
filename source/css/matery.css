@@ -1239,6 +1239,7 @@ article .article-tags .chip {
     max-width: 100%;
     height: auto;
     cursor: pointer;
+    /*border: 1px solid #CCC;*/
 }
 
 #articleContent video {
@@ -2269,4 +2270,19 @@ p.search-result-summary{
     height: 50px;
     padding: 0;
     margin: 0;
+}
+
+.no-comment-tips {
+    text-align: center;
+    font-size: .5rem;
+    font-style: italic;
+    color: #999999;
+    padding: unset;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }

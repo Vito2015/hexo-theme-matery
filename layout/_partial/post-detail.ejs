@@ -159,9 +159,14 @@
             <% if (theme.reward && theme.reward.enable) { %>
                 <%- partial('_partial/reward') %>
             <% } %>
+
+            <% if (!page.comments) { %>
+                <span class="no-comment-tips"><%- __('nocomments') %></span>
+            <% } %>
         </div>
     </div>
 
+    <% if (page.comments) {%>
     <% if (theme.gitalk && theme.gitalk.enable) { %>
         <%- partial('_partial/gitalk') %>
     <% } %>
@@ -192,6 +197,7 @@
 
     <% if (theme.twikoo && theme.twikoo.enable) { %>
         <%- partial('_partial/twikoo') %>
+    <% } %>
     <% } %>
 
     <%- partial('_partial/prev-next') %>
