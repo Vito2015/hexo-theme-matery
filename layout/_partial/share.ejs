@@ -10,5 +10,9 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%- theme.addthis.pubid %>"></script>
     <div class="addthis_inline_share_toolbox"></div>
     <% } %>
-
+    <script>
+        $(document).ready(function(){
+            $('#article-share a').attr('ref', 'external nofollow noopener noreferrer');
+        })
+    </script>
 </div>

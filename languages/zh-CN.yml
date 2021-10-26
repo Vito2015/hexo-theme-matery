@@ -78,4 +78,5 @@ site_author: 鲁君树人
 site_description: 记录分享编程技术心得，定格工作及生活美好瞬间。
 site_keywords: 幺蛾日记,鲁君树人,树洞博客,诗歌,IT,技术,编程,大数据,后端开发,Bug,Java,Node,Js,Python,Scala,Golang
 
+comma_symbol: "，"
 valine_submit: 提交

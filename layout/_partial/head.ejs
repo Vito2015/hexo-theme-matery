@@ -45,7 +45,9 @@
         description = strip_html(page.content).replace(/\n|\s/g,'').substring(0, 120);
         description = description ? description + '...' : description;
     }
-    description = description ? description : __('site_description');
+
+    var site_description_full = __('site_title') + __('comma_symbol') + __('site_subtitle') + __('comma_symbol') + __('site_description')
+    description = description ? description : site_description_full;
 
     let iconType = 'image/png'
     let faviconExt = theme.favicon.substr(theme.favicon.lastIndexOf('.') + 1, theme.favicon.length)

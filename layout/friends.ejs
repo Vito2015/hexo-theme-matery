@@ -12,33 +12,33 @@
         font-weight: 400;
     }
 
-    .frind-ship img {
+    .friend-ship img {
         border-radius: 50%;
     }
 
     /* 一下是按钮样式 */
 
-    .frind-ship {
+    .friend-ship {
         padding: 10px 20px;
     }
 
-    .frind-ship .title {
+    .friend-ship .title {
         display: flex;
         align-items: center;
     }
 
-    .frind-ship .title div {
+    .friend-ship .title div {
         color: #fff;
         padding-left: 10px;
     }
 
-    .frind-ship .title img {
+    .friend-ship .title img {
         width: 100px;
         height: 100px;
         flex-shrink: 0;
     }
 
-    .frind-ship .title h1 {
+    .friend-ship .title h1 {
         padding-bottom: 5px;
         border-bottom: 2px solid #fff;
         position: relative;
@@ -143,48 +143,66 @@
         text-decoration: none;
     }
 
-    .frind-card1 {
+    .friend-card1 {
         background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     }
 
-    .frind-card2 {
+    .friend-card2 {
         background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
 
-    .frind-card3 {
+    .friend-card3 {
         background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
     }
 
-    .frind-card4 {
+    .friend-card4 {
         background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     }
 
-    .frind-card5 {
+    .friend-card5 {
         background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
     }
 
-    .frind-card6 {
+    .friend-card6 {
         background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
     }
 
-    .frind-card7 {
+    .friend-card7 {
         background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
     }
 
-    .frind-card8 {
+    .friend-card8 {
         background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
     }
 
-    .frind-card9 {
+    .friend-card9 {
         background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
     }
 
-    .frind-card10 {
+    .friend-card10 {
         background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
     }
 
     article .card {
         overflow: visible !important;
+    }
+
+    .friend-ship .badge {
+        display: flex;
+        justify-content: right;
+    }
+
+    .friend-ship .badge .fb {
+        font-size: 0.85rem;
+        margin: 0 2px;;
+    }
+
+    i.fa-link {
+        color: #336633;
+    }
+
+    i.fa-unlink {
+        color: #CC3333;
     }
 </style>
 
@@ -196,15 +214,42 @@
                     <i class="fas fa-address-book"></i>&nbsp;&nbsp;<%= __('friends') %>
                 </div>
                 <h4><%= __('friends') %></h4>
+                <blockquote class="info">
+                    <p>
+                        <i class="fb fas fa-link" aria-hidden="true" data-tooltip="Linked"></i>
+                        : 友链正常，爬虫可正常访问
+                    </p>
+                    <p>
+                        <i class="fb fas fa-unlink" aria-hidden="true" data-tooltip="Nofollow"></i>
+                        : 友链Nofollow限制，请确认你已经添加了非<code>"rel"="nofollow"</code>的友链后, <a id="cccd" href="javascript:void(0);">联系博主</a>移除Nofollow限制
+                    </p>
+                </blockquote>
                 <article id="friends-link">
                     <% if (site.data && site.data.friends) { %>
                     <% var friends = site.data.friends; %>
                     <div class="row tags-posts friend-all">
                         <% for (var i = 0, len = friends.length; i < len; i++) { %>
                         <% var friend = friends[i]; %>
+                        <%
+                            friend = Object.assign({
+                                enable: true,
+                                rel: "external noopener noreferrer"
+                            }, friend);
+
+                            if(!friend.enable) {
+                                friend.rel += " nofollow"
+                            }
+                        %>
                         <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card<%- ((i % 10) +1) %>">
-                                <div class="frind-ship">
+                            <div class="card friend-card<%- ((i % 10) +1) %>">
+                                <div class="friend-ship">
+                                    <div class="badge">
+                                        <% if(friend.enable) { %>
+                                        <i class="fb fas fa-link" aria-hidden="true" data-tooltip="Linked"></i>
+                                        <%} else {%>
+                                        <i class="fb fas fa-unlink" aria-hidden="true" data-tooltip="Nofollow"></i>
+                                        <% }%>
+                                    </div>
                                     <div class="title">
                                         <img src="<%- url_for(friend.avatar) %>" alt="img">
                                         <div>
@@ -214,7 +259,8 @@
                                     </div>
                                     <div class="friend-button">
                                         <a href="<%- url_for(friend.url) %>" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
+                                           rel="<%= friend.rel %>"
+                                           class="button button-glow button-rounded button-caution">
                                             <%= friend.title %>
                                         </a>
                                     </div>
@@ -234,7 +280,7 @@
         </div>
 
 
-        <div class="card">
+        <div id="comments" class="card">
 
             <% if (theme.gitalk && theme.gitalk.enable) { %>
             <%- partial('_partial/gitalk') %>
@@ -268,6 +314,10 @@
     $(function () {
         $('#friends-link').masonry({
             itemSelector: '.friend-div'
+        });
+
+        $('#cccd').click(function () {
+            document.getElementById("comments").scrollIntoView(true);
         });
     });
 </script>
