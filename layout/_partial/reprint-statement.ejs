@@ -1,6 +1,8 @@
 <%
 let reprintPolicyEnabled = theme.reprint && theme.reprint.enable;
 let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
+let siteAuthorEmail = theme.socialLink.email;
+let mailtoSiteAuthor = "mailto://"+siteAuthorEmail;
 %>
 <% if (reprintPolicyEnabled) { %>
     <div class="reprint" id="reprint-statement">
@@ -12,7 +14,14 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="<%- url_for('/about') %>" rel="external nofollow noreferrer"><%- page.author || __('site_author') %></a>
+                    <%
+                        if (page.author_link && page.author_link.startsWith("mailto:")) {
+                            var subject = __('mailsubject') + page.title
+                            var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                            page.author_link = page.author_link + "?subject=" + subject +"&body="+body;
+                        }
+                    %>
+                    <a href="<%- page.author_link || url_for('/about') %>" target="_blank"><%- page.author || __('site_author') %></a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -33,8 +42,8 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
                 </span>
                 <span class="reprint-info">
                     <%= __('use') %>
-                    <a href="<%= __('cc_by_url') %>" rel="external nofollow noreferrer" target="_blank"><%= __('cc_by_name') %></a>
-                    <%= __('licensed') %>
+                    <a href="<%= __('cc_by_url') %>" target="_blank"><%= __('cc_by_name') %></a>
+                    <%= __('licensed') %><em style="color: var(--warning)"><%= __('cc_by_desc') %></em><%= __('licensed_from') %>
                     <a href="<%- config.url %>" target="_blank"><%- __('site_title') %></a>
                     !
                 </span>
@@ -43,11 +52,18 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        <%= __('site_author') %>:
+                        <%= __('author') %>:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="<%- url_for('/about') %>" rel="external nofollow noreferrer"><%- page.author || __('site_author') %></a>
+                    <%
+                        if (page.author_link && page.author_link.startsWith("mailto:")) {
+                            var subject = __('mailsubject') + page.title
+                            var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                            page.author_link = page.author_link + "?subject=" + subject +"&body="+body;
+                        }
+                    %>
+                    <a href="<%- page.author_link || url_for('/about') %>" target="_blank"><%- page.author || __('site_author') %></a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -68,8 +84,8 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
                 </span>
                 <span class="reprint-info">
                     <%= __('use') %>
-                    <a href="<%= __('cc_by_nd_url') %>" rel="external nofollow noreferrer" target="_blank"><%= __('cc_by_nd_name') %></a>
-                    <%= __('licensed') %>
+                    <a href="<%= __('cc_by_nd_url') %>" target="_blank"><%= __('cc_by_nd_name') %></a>
+                    <%= __('licensed') %><em style="color: var(--warning)"><%= __('cc_by_nd_desc') %></em><%= __('licensed_from') %>
                     <a href="<%- config.url %>" target="_blank"><%- __('site_title') %></a>
                     !
                 </span>
@@ -78,12 +94,19 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        <%= __('site_author') %>:
+                        <%= __('author') %>:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="<%- config.url %>" rel="external nofollow noreferrer"><%- page.author || __('site_author') %></a>
-                    </span>
+                    <%
+                        if (page.author_link && page.author_link.startsWith("mailto:")) {
+                            var subject = __('mailsubject') + page.title
+                            var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                            page.author_link = page.author_link + "?subject=" + subject +"&body="+body;
+                        }
+                    %>
+                    <a href="<%- page.author_link || url_for('/about') %>"  target="_blank"><%- page.author || __('site_author') %></a>
+                </span>
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
@@ -103,8 +126,8 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
                 </span>
                 <span class="reprint-info">
                     <%= __('use') %>
-                    <a href="<%= __('cc_by_sa_url') %>" rel="external nofollow noreferrer" target="_blank"><%= __('cc_by_sa_name') %></a>
-                    <%= __('licensed') %>
+                    <a href="<%= __('cc_by_sa_url') %>" target="_blank"><%= __('cc_by_sa_name') %></a>
+                    <%= __('licensed') %><em style="color: var(--warning)"><%= __('cc_by_sa_desc') %></em><%= __('licensed_from') %>
                     <a href="<%- config.url %>" target="_blank"><%- __('site_title') %></a>
                     !
                 </span>
@@ -113,11 +136,18 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        <%= __('site_author') %>:
+                        <%= __('author') %>:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="<%- config.url %>" rel="external nofollow noreferrer"><%- page.author || __('site_author') %></a>
+                    <%
+                        if (page.author_link && page.author_link.startsWith("mailto:")) {
+                            var subject = __('mailsubject') + page.title
+                            var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                            page.author_link = page.author_link + "?subject=" + subject +"&body="+body;
+                        }
+                    %>
+                    <a href="<%- page.author_link || url_for('/about') %>" target="_blank"><%- page.author || __('site_author') %></a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -138,8 +168,8 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
                 </span>
                 <span class="reprint-info">
                     <%= __('use') %>
-                    <a href="<%= __('cc_by_nc_url') %>" rel="external nofollow noreferrer" target="_blank"><%= __('cc_by_nc_name') %></a>
-                    <%= __('licensed') %>
+                    <a href="<%= __('cc_by_nc_url') %>" target="_blank"><%= __('cc_by_nc_name') %></a>
+                    <%= __('licensed') %><em style="color: var(--warning)"><%= __('cc_by_nc_desc') %></em><%= __('licensed_from') %>
                     <a href="<%- config.url %>" target="_blank"><%- __('site_title') %></a>
                     !
                 </span>
@@ -148,11 +178,18 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        <%= __('site_author') %>:
+                        <%= __('author') %>:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="<%- config.url %>" rel="external nofollow noreferrer"><%- page.author || __('site_author') %></a>
+                    <%
+                        if (page.author_link && page.author_link.startsWith("mailto:")) {
+                            var subject = __('mailsubject') + page.title
+                            var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                            page.author_link = page.author_link + "?subject=" + subject +"&body="+body;
+                        }
+                    %>
+                    <a href="<%- page.author_link || url_for('/about') %>" target="_blank"><%- page.author || __('site_author') %></a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -173,8 +210,8 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
                 </span>
                 <span class="reprint-info">
                     <%= __('use') %>
-                    <a href="<%= __('cc_by_nc_nd_url') %>" rel="external nofollow noreferrer" target="_blank"><%= __('cc_by_nc_nd_name') %></a>
-                    <%= __('licensed') %>
+                    <a href="<%= __('cc_by_nc_nd_url') %>" target="_blank"><%= __('cc_by_nc_nd_name') %></a>
+                    <%= __('licensed') %><em style="color: var(--warning)"><%= __('cc_by_nc_nd_desc') %></em><%= __('licensed_from') %>
                     <a href="<%- config.url %>" target="_blank"><%- __('site_title') %></a>
                     !
                 </span>
@@ -183,11 +220,18 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        <%= __('site_author') %>:
+                        <%= __('author') %>:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="<%- config.url %>" rel="external nofollow noreferrer"><%- page.author || __('site_author') %></a>
+                    <%
+                        if (page.author_link && page.author_link.startsWith("mailto:")) {
+                            var subject = __('mailsubject') + page.title
+                            var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                            page.author_link = page.author_link + "?subject=" + subject +"&body="+body;
+                        }
+                    %>
+                    <a href="<%- page.author_link || url_for('/about') %>" target="_blank"><%- page.author || __('site_author') %></a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -208,8 +252,8 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
                 </span>
                 <span class="reprint-info">
                     <%= __('use') %>
-                    <a href="<%= __('cc_by_nc_sa_url') %>" rel="external nofollow noreferrer" target="_blank"><%= __('cc_by_nc_sa_name') %></a>
-                    <%= __('licensed') %>
+                    <a href="<%= __('cc_by_nc_sa_url') %>"  target="_blank"><%= __('cc_by_nc_sa_name') %></a>
+                    <%= __('licensed') %><em style="color: var(--warning)"><%= __('cc_by_nc_sa_desc') %></em><%= __('licensed_from') %>
                     <a href="<%- config.url %>" target="_blank"><%- __('site_title') %></a>
                     !
                 </span>
@@ -217,16 +261,18 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
         <% } else if (reprintPolicy === 'cc0') { %>
             <i class="fas fa-exclamation-circle"></i>
             <%= __('toTheExtentPossibleUnderLaw') %>
-            <a href="<%- config.url %>">
-                <%- page.author || __('site_author') %>
-            </a>
-            <%= __('hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo') %>
-            <a  href="<%- url_for(page.path) %>">
-                《<%= page.title %>》
-            </a>
+                <%
+                    if (page.author_link && page.author_link.startsWith("mailto:")) {
+                        var subject = __('mailsubject') + page.title
+                        var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                        page.author_link = page.author_link + "?subject=" + subject +"&body="+body;
+                    }
+                %>
+                <a href="<%- page.author_link || url_for('/about') %>" target="_blank"><%- page.author || __('site_author') %></a>
+            <%= __('hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo') %><a  href="<%- url_for(page.path) %>">《<%= page.title %>》</a>
             <%= __('workPublishedFrom') %>
             <span property="vcard:Country" datatype="dct:ISO3166"
-                content="<%= __('cc_0_content') %>" about="<%- url_for(page.path) %>">
+                content="<%= __('cc_0_content') %>" about="<%- config.url %><%- url_for(page.path) %>">
                 <%= __('cc_0_country') %>
             </span>
             </p>
@@ -239,7 +285,16 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
             <i class="fas fa-exclamation-circle"></i>
             <%= __('paycontact') %>
             <span class="reprint-info">
-                <a href="<%- config.url %>" rel="external nofollow noreferrer"><%- page.author || __('site_author') %></a>
+                <%
+                    var subject = __('mailsubject') + __('paymailsubject') + page.title
+                    var body = __('mailbody_articletitle') + page.title +"%0a%0d" + __('mailbody_articlelink') + config.url + page.path
+                    var mailparams = "?subject=" + subject +"&body="+body;
+
+                    if (page.author_link && page.author_link.startsWith("mailto:")) {
+                        page.author_link = page.author_link + mailparams;
+                    }
+                %>
+                <a href="<%- page.author_link || mailtoSiteAuthor+mailparams %>" target="_blank"><%- page.author || __('site_author') %></a>
             </span>
             <%= __('payreprint') %>
         <% } %>

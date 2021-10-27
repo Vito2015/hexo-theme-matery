@@ -114,26 +114,94 @@ hr {
 blockquote {
     border-left: 5px solid #42b983;
     padding: 0.2rem 0.8rem 0.2rem 0.8rem;
-    color: #666;
     background-color: rgba(66, 185, 131, .1);
+    border-radius: 3px;
+}
+
+blockquote.center {
+    text-align: center;
 }
 
 blockquote.danger{
-    border-left: 5px solid #CC3333;
-    color: #666;
-    background-color: rgba(204, 51, 51, .1);
+    border-left: 5px solid #d9534f;
+    background-color: rgba(217, 83, 79, .1);
 }
 
-blockquote.warn{
-    border-left: 5px solid #FF9966;
-    color: #666;
-    background-color: rgba(255, 153, 102, .1);
+blockquote.warning{
+    border-left: 5px solid #f0ad4e;
+    background-color: rgba(240, 173, 78, .1);
 }
 
 blockquote.info{
-    border-left: 5px solid #0066CC;
-    color: #666;
-    background-color: rgba(0, 102, 204, .1);
+    border-left: 5px solid #428bca;
+    background-color: rgba(66, 139, 202, .1);
+}
+
+/* note 公共样式 */
+.note {
+    position: relative;
+    /*padding: 15px;*/
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: initial;
+    border-left: 5px solid #eee;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    font-size: larger;
+}
+
+.note:not(.no-icon):before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    /* font-size: larger; */
+    top: 4px;
+    left: 15px;
+    font-weight: 600;
+}
+
+.note:not(.no-icon) {
+    padding-left: 45px;
+}
+
+.note.info {
+    background-color: #eef7fa;
+    border-left-color: #428bca;
+}
+
+.note.info:not(.no-icon):before {
+    content: "\f05a";
+    color: #428bca;
+}
+
+.note.warning {
+    background-color: #fdf8ea;
+    border-left-color: #f0ad4e;
+}
+
+.note.warning:not(.no-icon):before {
+    content: "\f06a";
+    color: #f0ad4e;
+}
+
+.note.primary {
+    background-color: #f5f0fa;
+    border-left-color: #6f42c1;
+}
+
+.note.primary:not(.no-icon):before {
+    content: "\f055";
+    color: #6f42c1;
+}
+
+.note.danger {
+    background-color: #fcf1f2;
+    border-left-color: #d9534f;
+}
+
+.note.danger:not(.no-icon):before {
+    content: "\f056";
+    color: #d9534f;
 }
 
 pre {

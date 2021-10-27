@@ -44,35 +44,46 @@ from: From
 reprint: Reprint policy
 author: Author
 link: Link
-use: All articles in this blog are used except for special statements
-licensed: reprint policy. If reproduced, please indicate source
-cc_by_url: https://creativecommons.org/licenses/by/4.0/deed.zh
+use: This article used
+licensed: reprint policy
+licensed_from: If reproduced, please indicate source
+cc_by_url: https://creativecommons.org/licenses/by/4.0/deed.en
 cc_by_name: CC BY 4.0
-cc_by_nd_url: https://creativecommons.org/licenses/by-nd/4.0/deed.zh
+cc_by_desc: "[Must Attribution,Share,Adapt]"
+cc_by_nd_url: https://creativecommons.org/licenses/by-nd/4.0/deed.en
 cc_by_nd_name: CC BY-ND 4.0
-cc_by_sa_url: https://creativecommons.org/licenses/by-sa/4.0/deed.zh
+cc_by_nd_desc: "[Must Attribution,Share,NoDerivatives]"
+cc_by_sa_url: https://creativecommons.org/licenses/by-sa/4.0/deed.en
 cc_by_sa_name: CC BY-SA 4.0
-cc_by_nc_url: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
+cc_by_sa_desc: "[Must Attribution,ShareAlike,Adapt]"
+cc_by_nc_url: https://creativecommons.org/licenses/by-nc/4.0/deed.en
 cc_by_nc_name: CC BY-NC 4.0
-cc_by_nc_nd_url: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh
+cc_by_nc_desc: "[Must Attribution,Share,Adapt,NonCommercial]"
+cc_by_nc_nd_url: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en
 cc_by_nc_nd_name: CC BY-NC-ND 4.0
-cc_by_nc_sa_url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+cc_by_nc_nd_desc: "[Must Attribution,Share,NoDerivatives,NonCommercial]"
+cc_by_nc_sa_url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 cc_by_nc_sa_name: CC BY-NC-SA 4.0
+cc_by_nc_sa_desc: "[Must Attribution,ShareAlike,Adapt,NonCommercial]"
 cc_0_url: https://creativecommons.org/publicdomain/zero/1.0/
 toTheExtentPossibleUnderLaw: To the extent possible under law,
-hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo: has waived all copyright and related or neighboring rights to
-workPublishedFrom: ". This work is published from:"
+hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo: "has waived all copyright and related or neighboring rights to ."
+workPublishedFrom: "This work is published from:"
 cc_0_country: United States.
 cc_0_content: US
 noreprint: This article is not allowed to reprint.
 nocomments: This article is not allowed to comments
 paycontact: Please contact the author
 payreprint: to pay for reprinting.
+paymailsubject: 'article pay for reprinting - '
 pleaseFollowReprintPolicy: Copied successfully, please follow the reprint policy of this article
 checkPolicy: more
 siteTotalWords: Total Words
 siteTotalVisits: Total visits
 siteTotalVisitors: Total visitors
+mailsubject: '[iBug Diary]'
+mailbody_articletitle: "Article Title:"
+mailbody_articlelink: "Article Link:"
 site_title: iBug Diary
 site_subtitle: Vito's blog
 site_author: Vito

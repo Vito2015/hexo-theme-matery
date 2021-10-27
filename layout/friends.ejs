@@ -214,16 +214,18 @@
                     <i class="fas fa-address-book"></i>&nbsp;&nbsp;<%= __('friends') %>
                 </div>
                 <h4><%= __('friends') %></h4>
-                <blockquote class="info">
+                <div class="note info no-icon">
                     <p>
                         <i class="fb fas fa-link" aria-hidden="true" data-tooltip="Linked"></i>
-                        : 友链正常，爬虫可正常访问
+                        &nbsp;&nbsp;友链正常，爬虫可正常访问。
                     </p>
+                </div>
+                <div class="note warning no-icon">
                     <p>
                         <i class="fb fas fa-unlink" aria-hidden="true" data-tooltip="Nofollow"></i>
-                        : 友链Nofollow限制，请确认你已经添加了非<code>"rel"="nofollow"</code>的友链后, <a id="cccd" href="javascript:void(0);">联系博主</a>移除Nofollow限制
+                        &nbsp;&nbsp;友链 Nofollow 限制，请确认你已经添加了本站友链，且非<code>"rel"="nofollow"</code>, <a id="cccd" href="javascript:void(0);">联系博主</a>移除 Nofollow 限制。
                     </p>
-                </blockquote>
+                </div>
                 <article id="friends-link">
                     <% if (site.data && site.data.friends) { %>
                     <% var friends = site.data.friends; %>

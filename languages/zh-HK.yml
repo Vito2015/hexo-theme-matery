@@ -44,35 +44,46 @@ from: 來源
 reprint: 版權聲明
 author: 文章作者
 link: 文章連結
-use: 本部落格所有文章除特別聲明外，均採用
-licensed: 許可協議。轉載請註明來源
+use: 本篇文章採用
+licensed: 版權協議
+licensed_from: ，轉載請註明來源
 cc_by_url: https://creativecommons.org/licenses/by/4.0/deed.zh
 cc_by_name: CC BY 4.0
+cc_by_desc: 『必須署名，可共享，可演繹』
 cc_by_nd_url: https://creativecommons.org/licenses/by-nd/4.0/deed.zh
 cc_by_nd_name: CC BY-ND 4.0
+cc_by_nd_desc: 『必須署名，可共享，禁止演繹』
 cc_by_sa_url: https://creativecommons.org/licenses/by-sa/4.0/deed.zh
 cc_by_sa_name: CC BY-SA 4.0
+cc_by_sa_desc: 『必須署名，相同方式共享，可演繹』
 cc_by_nc_url: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 cc_by_nc_name: CC BY-NC 4.0
+cc_by_nc_desc: 『必須署名，可共享，可演繹，非商用』
 cc_by_nc_nd_url: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh
 cc_by_nc_nd_name: CC BY-NC-ND 4.0
+cc_by_nc_nd_desc: 『必須署名，可共享，禁止演繹，非商用』
 cc_by_nc_sa_url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
 cc_by_nc_sa_name: CC BY-NC-SA 4.0
+cc_by_nc_sa_desc: 『必須署名，相同方式共享，可演繹，非商用』
 cc_0_url: https://creativecommons.org/publicdomain/zero/1.0/deed.zh
 toTheExtentPossibleUnderLaw: 在法律允許的範圍內，
-hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo: 已放棄此作品的所有版權、相關或相鄰的權利
-workPublishedFrom: 。此作品發布在：
+hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo: 已放棄此作品的所有版權、相關或相鄰的權利。
+workPublishedFrom: 此作品發布在：
 cc_0_country: 香港。
 cc_0_content: HK
 noreprint: 本文不允許轉載。
 nocomments: 本文不允許評論
 paycontact: 請聯絡作者
 payreprint: 付費轉載。
+paymailsubject: '文章付費轉載申請 - '
 pleaseFollowReprintPolicy: 複製成功，請遵循本文的轉載規則
 checkPolicy: 查看
 siteTotalWords: 站點總字數
 siteTotalVisits: 總訪問量
 siteTotalVisitors: 總訪問人數
+mailsubject: '[幺蛾日記]'
+mailbody_articletitle: 文章標題：
+mailbody_articlelink: 文章鏈接：
 site_title: 幺蛾日記
 site_subtitle: 魯君樹人的博客
 site_author: 魯君樹人
