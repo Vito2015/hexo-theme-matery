@@ -1641,7 +1641,109 @@ thead {
     justify-content: center;
 }
 
-/*@media screen and (min-width: 368px) and (max-width: 767px) {*/
+.card .card-image .card-title:before {
+    content: '\f023';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    font-size: 10pt;
+    padding-right: 8px;
+}
+
+.card .card-image .card-title:not(.lock):before {
+    content: '';
+    font-family: unset;
+    font-weight: unset;
+    font-style: unset;
+    font-variant: unset;
+}
+
+.hbe-button {
+    width: 40px !important;
+    height: 40px !important;
+    background: unset !important;
+    background-image: linear-gradient(to right, var(--light) 0%, var(--dark) 100%) !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--white) !important;
+    border-radius: 50% !important;
+    margin-right: unset !important;
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+
+    border: unset !important;
+    position: relative;
+    border-bottom: unset !important;
+    font-family: unset !important;
+    text-shadow: unset !important;
+    text-align: center !important;
+    text-indent: unset !important;
+    box-shadow: unset !important;
+    cursor: pointer !important;
+
+    display: block !important;
+    margin: 10px auto !important;
+}
+
+.hbe-button:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,.2), 0 5px 15px rgba(0,0,0,.2) !important;
+    top: unset !important;
+}
+.hbe-button:before {
+    content: '\f023';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    font-size: 14pt;
+}
+.hbe-button:after {
+    content: unset !important;
+    width: unset !important;
+    height: unset !important;
+    display: unset !important;
+    border-top: unset !important;
+    border-bottom: unset !important;
+    border-left: unset !important;
+    border-right: unset !important;
+    position: unset !important;
+    opacity: unset !important;
+    right: unset !important;
+    top: unset !important;
+    border-radius: unset !important;
+}
+.hbe-input {
+    min-width: unset !important;
+}
+.hbe-input-label-shrink {
+    word-break: unset;
+    overflow:hidden;
+    text-align: left !important;
+    font-size: .8em !important;
+    /*padding: unset !important;*/
+    padding-bottom: 3em !important;
+}
+
+.hbe-input-field-shrink:focus + .hbe-input-label-shrink::after,
+.input--filled .hbe-input-label-shrink::after {
+    background: #84AF9B;
+    -webkit-transform: scale3d(1, 0.25, 1);
+    transform: scale3d(1, 0.25, 1);
+}
+
+.hbe-input-field-shrink:focus + .hbe-input-label-shrink .hbe-input-label-content-shrink,
+.input--filled .hbe-input-label-shrink .hbe-input-label-content-shrink {
+    color: #84AF9B;
+    -webkit-transform: translate3d(0, 2em, 0) scale3d(0.655, 0.655, 1) !important;
+    transform: translate3d(0, 2em, 0) scale3d(0.655, 0.655, 1) !important;
+}
+
+.hbe-input-label-content-shrink:before {
+    content: '\f084' !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 600 !important;
+    font-size: .8em !important;
+}
+
+    /*@media screen and (min-width: 368px) and (max-width: 767px) {*/
 /*    .cd-timeline-content .card .card-title {*/
 /*        text-align: center;*/
 /*    }*/

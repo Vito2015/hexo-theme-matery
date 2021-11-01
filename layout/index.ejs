@@ -73,19 +73,24 @@
                             %>
                             <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= post.title %>">
                             <% } %>
-                            <span class="card-title"><%= post.title %></span>
+                            <span class="card-title <%- post.password ? 'lock' : '' %>"><%= post.title %></span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
-                            <% if (post.summary && post.summary.length > 0) { %>
-                                <%- post.summary %>
-                            <% } else if (post.excerpt && post.excerpt.length > 0) { %>
-                                <%- strip_html(post.excerpt).substring(0, 120) %>
-                            <% } else if (post.content && post.content.length > 0) { %>
-                                <%- strip_html(post.content).substring(0, 120) %>
-                            <% } %>
+                            <%
+                                let summaryText = "";
+                                let p = post;
+                                if (p.summary && p.summary.length > 0) {
+                                    summaryText = p.summary;
+                                } else if (p.excerpt && p.excerpt.length > 0) {
+                                    summaryText = strip_html(p.excerpt).substring(0, 120)
+                                } else if (p.content && p.content.length > 0) {
+                                    summaryText = strip_html(p.content).substring(0, 120)
+                                }
+                            %>
+                            <%- summaryText %>
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">

@@ -95,10 +95,12 @@
     <div id="main-content" class="col s12 m12 l10 offset-l1">
         <%- partial('_partial/post-detail.ejs') %>
     </div>
-    <div id="toc-aside" class="expanded col l1 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;<%- __('toc') %></div>
-            <div id="toc-content"></div>
+    <div id="toc-div">
+        <div id="toc-aside" class="expanded col l1 hide-on-med-and-down">
+            <div class="toc-widget">
+                <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;<%- __('toc') %></div>
+                <div id="toc-content"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -186,4 +188,8 @@
         });
         <% } %>
     });
+
+    $(function (){
+        tocbot.refresh();
+    })
 </script>

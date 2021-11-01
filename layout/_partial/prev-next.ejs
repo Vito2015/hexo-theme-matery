@@ -35,18 +35,23 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.prev.title %>">
                         <% } %>
-                        <span class="card-title"><%= page.prev.title %></span>
+                        <span class="card-title <%- page.prev.password ? 'lock' : '' %>"><%= page.prev.title %></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
-                        <% if (page.prev.summary && page.prev.summary.length > 0) { %>
-                            <%- page.prev.summary %>
-                        <% } else if (page.prev.excerpt && page.prev.excerpt.length > 0) { %>
-                            <%- strip_html(page.prev.excerpt).substring(0, 120) %>
-                        <% } else if (page.prev.content && page.prev.content.length > 0) { %>
-                            <%- strip_html(page.prev.content).substring(0, 120) %>
-                        <% } %>
+                        <%
+                            let summaryText = "";
+                            let p = page.prev;
+                            if (p.summary && p.summary.length > 0) {
+                                summaryText = p.summary;
+                            } else if (p.excerpt && p.excerpt.length > 0) {
+                                summaryText = strip_html(p.excerpt).substring(0, 120)
+                            } else if (p.content && p.content.length > 0) {
+                                summaryText = strip_html(p.content).substring(0, 120)
+                            }
+                        %>
+                        <%- summaryText %>
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
@@ -97,18 +102,23 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } %>
-                        <span class="card-title"><%= page.title %></span>
+                        <span class="card-title <%- page.password ? 'lock' : '' %>"><%= page.title %></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
-                        <% if (page.summary && page.summary.length > 0) { %>
-                            <%- page.summary %>
-                        <% } else if (page.excerpt && page.excerpt.length > 0) { %>
-                            <%- strip_html(page.excerpt).substring(0, 120) %>
-                        <% } else if (page.content && page.content.length > 0) { %>
-                            <%- strip_html(page.content).substring(0, 120) %>
-                        <% } %>
+                        <%
+                            let summaryText = "";
+                            let p = page;
+                            if (p.summary && p.summary.length > 0) {
+                                summaryText = p.summary;
+                            } else if (p.excerpt && p.excerpt.length > 0) {
+                                summaryText = strip_html(p.excerpt).substring(0, 120)
+                            } else if (p.content && p.content.length > 0) {
+                                summaryText = strip_html(p.content).substring(0, 120)
+                            }
+                        %>
+                        <%- summaryText %>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
@@ -161,18 +171,23 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.next.title %>">
                         <% } %>
-                        <span class="card-title"><%= page.next.title %></span>
+                        <span class="card-title <%- page.next.password ? 'lock' : '' %>"><%= page.next.title %></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
-                        <% if (page.next.summary && page.next.summary.length > 0) { %>
-                            <%- page.next.summary %>
-                        <% } else if (page.next.excerpt && page.next.excerpt.length > 0) { %>
-                            <%- strip_html(page.next.excerpt).substring(0, 120) %>
-                        <% } else if (page.next.content && page.next.content.length > 0) { %>
-                            <%- strip_html(page.next.content).substring(0, 120) %>
-                        <% } %>
+                        <%
+                            let summaryText = "";
+                            let p = page.next;
+                            if (p.summary && p.summary.length > 0) {
+                                summaryText = p.summary;
+                            } else if (p.excerpt && p.excerpt.length > 0) {
+                                summaryText = strip_html(p.excerpt).substring(0, 120)
+                            } else if (p.content && p.content.length > 0) {
+                                summaryText = strip_html(p.content).substring(0, 120)
+                            }
+                        %>
+                        <%- summaryText %>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
@@ -223,18 +238,23 @@ var featureImages = theme.featureImages;
                         %>
                         <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } %>
-                        <span class="card-title"><%= page.title %></span>
+                        <span class="card-title <%- page.password ? 'lock' : '' %>"><%= page.title %></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
-                        <% if (page.summary && page.summary.length > 0) { %>
-                            <%- page.summary %>
-                        <% } else if (page.excerpt && page.excerpt.length > 0) { %>
-                            <%- strip_html(page.excerpt).substring(0, 120) %>
-                        <% } else if (page.content && page.content.length > 0) { %>
-                            <%- strip_html(page.content).substring(0, 120) %>
-                        <% } %>
+                        <%
+                            let summaryText = "";
+                            let p = page;
+                            if (p.summary && p.summary.length > 0) {
+                                summaryText = p.summary;
+                            } else if (p.excerpt && p.excerpt.length > 0) {
+                                summaryText = strip_html(p.excerpt).substring(0, 120)
+                            } else if (p.content && p.content.length > 0) {
+                                summaryText = strip_html(p.content).substring(0, 120)
+                            }
+                        %>
+                        <%- summaryText %>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">

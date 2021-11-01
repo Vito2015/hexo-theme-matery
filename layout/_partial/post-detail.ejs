@@ -241,7 +241,17 @@
     });
 </script>
 <% } %>
-
+<script>
+    $(".hbe-button").text("")
+    $(".hbe-input-field").bind('keypress', function (event) {
+        if(event.keyCode == '13') {
+            setTimeout(function() {
+                $(".hbe-button").text("")
+                tocbot.refresh();
+            }, 100);
+        }
+    });
+</script>
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="<%- theme.jsDelivr.url %><%- url_for('/libs/codeBlock/codeBlockFuction.js') %>"></script>
 
