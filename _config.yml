@@ -127,7 +127,7 @@ indexbtn:
   enable: false
   name: Github
   icon: fab fa-github-alt
-  url: https://github.com/Vito2015
+  url: https://github.com/dvbug
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
@@ -135,7 +135,7 @@ indexbtn:
 socialLink:
   coverEnable: false
   footerEnable: true
-  github: https://github.com/Vito2015
+  github: https://github.com/dvbug
   email: vito@ibug.info
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
@@ -240,7 +240,7 @@ mySkills:
   data:
     Java:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 85%
+      percent: 90%
     Python:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
       percent: 90%
@@ -255,7 +255,7 @@ mySkills:
       percent: 80%
     HTML5:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
+      percent: 70%
     CSS:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 70%
@@ -264,7 +264,7 @@ mySkills:
       percent: 80%
     架构设计:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 80%
+      percent: 90%
 
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
@@ -362,7 +362,7 @@ changyan:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: false
-  url: https://github.com/Vito2015
+  url: https://github.com/dvbug
   title: Fork Me
 
 # The configuration of the Twikoo comment module is not activated by default.

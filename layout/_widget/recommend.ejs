@@ -11,6 +11,11 @@
         });
     }
     var topPostsCount = topPosts.length;
+
+    // sorted by updated desc
+    topPosts.sort((a,b)=>{
+        return b.updated - a.updated;
+    })
 %>
 
 <% if (topPostsCount > 0) { %>
